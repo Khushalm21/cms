@@ -358,6 +358,17 @@
   <script src="js/smoothscroll.js"></script>
   <script src="js/custom.js"></script>
   <script src="js/customcursor.js"></script>
+   <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
 </body>
 
